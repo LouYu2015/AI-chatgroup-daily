@@ -1,8 +1,9 @@
 ---
 ---
 
+@import "jekyll-theme-chirpy";
+
 /* ── Hide empty avatar circle ─────────────────────────────────────────────── */
-/* Actual HTML: <a id="avatar" class="rounded-circle"></a> */
 #avatar {
   display: none !important;
 }
