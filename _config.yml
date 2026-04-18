@@ -1,0 +1,80 @@
+title: AI 群聊日报
+tagline: 每日 AI 技术讨论精选（匿名化公开版）
+description: 一个关注 AI 技术的微信群每日讨论精选，经过匿名化处理后公开发布。
+
+url: https://louyu2015.github.io
+baseurl: /AI-chatgroup-daily
+
+github:
+  username: LouYu2015
+
+social:
+  name: LouYu2015
+  email: louyu27@gmail.com
+  links:
+    - https://github.com/LouYu2015
+
+theme: jekyll-theme-chirpy
+
+lang: zh-CN
+timezone: Asia/Shanghai
+
+toc: true
+
+paginate: 10
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - "*.config.js"
+  - package*.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
