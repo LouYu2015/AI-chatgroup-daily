@@ -1,0 +1,4 @@
+- type: rss
+  icon: "fas fa-rss"
+  url: "/feed.xml"
+  noblank: true

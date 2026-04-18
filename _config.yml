@@ -16,6 +16,10 @@ social:
 
 theme: jekyll-theme-chirpy
 
+analytics:
+  google:
+    id: G-XQKH667NJ5
+
 lang: zh-CN
 timezone: Asia/Shanghai
 
