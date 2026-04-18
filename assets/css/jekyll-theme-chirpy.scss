@@ -1,21 +1,16 @@
 ---
 ---
 
-@import "{{ site.theme }}";
-
 /* ── Hide empty avatar circle ─────────────────────────────────────────────── */
-#avatar,
-.profile-wrapper #avatar,
-.sidebar .avatar,
-.sidebar img.rounded-circle {
+/* Actual HTML: <a id="avatar" class="rounded-circle"></a> */
+#avatar {
   display: none !important;
 }
 
-/* ── Hide author name (LouYu2015) shown below site title in sidebar ───────── */
+/* ── Hide author name shown in sidebar / footer ───────────────────────────── */
 .site-author,
 .sidebar .username,
-#sidebar-bottom a[href*="github.com/LouYu2015"],
-.sidebar a.author {
+#sidebar-bottom a[href*="github.com/LouYu2015"] {
   display: none !important;
 }
 
