@@ -40,6 +40,11 @@ kramdown:
 defaults:
   - scope:
       path: ""
+      type: tabs
+    values:
+      permalink: /:title/
+  - scope:
+      path: ""
       type: posts
     values:
       layout: post
