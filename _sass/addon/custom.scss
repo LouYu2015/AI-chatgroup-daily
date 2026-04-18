@@ -1,14 +1,9 @@
----
----
-
-@import "jekyll-theme-chirpy";
-
 /* ── Hide empty avatar circle ─────────────────────────────────────────────── */
 #avatar {
   display: none !important;
 }
 
-/* ── Hide author name shown in sidebar / footer ───────────────────────────── */
+/* ── Hide author name (LouYu2015) shown in sidebar / footer ──────────────── */
 .site-author,
 .sidebar .username,
 #sidebar-bottom a[href*="github.com/LouYu2015"] {
