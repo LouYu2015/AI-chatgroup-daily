@@ -1,9 +1,67 @@
+<style>
+  .followit-subscribe-form {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    padding: 14px 16px 16px;
+    background-color: var(--main-bg);
+    border: 1px solid var(--btn-border-color);
+    border-radius: 6px;
+  }
+  .followit-subscribe-form form {
+    margin: 0;
+  }
+  .followit-subscribe-form h5 {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--heading-color);
+    text-align: center;
+    font-family: inherit;
+  }
+  .followit-subscribe-form input[type="email"] {
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid var(--btn-border-color);
+    border-radius: 5px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 13px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .followit-subscribe-form input[type="email"]::placeholder {
+    color: var(--sidebar-muted-color);
+  }
+  .followit-subscribe-form input[type="email"]:focus {
+    border-color: var(--link-color);
+  }
+  .followit-subscribe-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    height: 36px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--link-color);
+    color: var(--sidebar-bg);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s;
+  }
+  .followit-subscribe-form button[type="submit"]:hover {
+    opacity: 0.85;
+  }
+</style>
+
 <div class="followit-subscribe-form">
   <form action="https://api.follow.it/subscription-form/WlJBeEFnOWNIR25MN2ZuVkJQTkd5R2EzaGMzYlU0WE9uTVYxM212SFVLc0M2cE8yZkJDcGZsRndXc2dlS1JVRGVFRVN0a1VVNDBPV1pyR21YV2x1YWRtTW1BNkZuRkZST1BFNlNSbkNOdGQyQzhERXczRXBERGFDbVhUUnFUUUZ8SzNYaUVxLzNtbllMSnc5N3JZQUVkeWt5Q0VKanlLYUQ3ZFE1Nnk5VjZXUT0=/8" method="post">
-    <div class="followit-form-inner">
-      <h5>Get new posts by email:</h5>
-      <input type="email" name="email" required placeholder="Enter your email" spellcheck="false">
-      <button type="submit">Subscribe</button>
-    </div>
+    <h5>邮件订阅新文章</h5>
+    <input type="email" name="email" required placeholder="输入邮箱地址" spellcheck="false">
+    <button type="submit">订阅</button>
   </form>
 </div>
