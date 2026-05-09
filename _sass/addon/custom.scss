@@ -86,7 +86,9 @@
   --tech-blue-quote-bar: #1d4ed8;
   --tech-blue-tag-bg: rgba(29, 78, 216, 0.09);
 }
-html[data-mode="dark"] {
+// 跟随 Chirpy 的暗色判定：OS prefers-color-scheme=dark 且未手动指定 light，
+// 或者用户显式切到 dark。两条都要写，缺一会漏掉一种情况。
+@mixin dark-tokens {
   // 深色模式蓝色取 Google #8ab4f8（Chrome / Material You 暗色链接色）：
   // 比 Tailwind blue-400 (#60a5fa) 饱和度更低、明度更高，
   // 在 #1b1b1e 上对比度 ≈ 8.3:1（WCAG AAA），且不"扎眼"。
@@ -96,6 +98,10 @@ html[data-mode="dark"] {
   --tech-blue-quote-bar: rgba(138, 180, 248, 0.5);
   --tech-blue-tag-bg: transparent;
 }
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) { @include dark-tokens; }
+}
+html[data-mode="dark"] { @include dark-tokens; }
 
 .content {
   a:not(.img-link):not(.tag) {
@@ -160,15 +166,20 @@ html[data-mode="dark"] {
 // 深色模式下：行内 code 与 blockquote 改用中性灰底，
 // 把蓝色让给 H2 / H3 badge / 链接这三个"主动强调"，
 // 避免全屏蓝点叠加。
-html[data-mode="dark"] .content :not(pre) > code {
-  background: rgba(255, 255, 255, 0.06);
-  color: #d6dee8;
+@mixin dark-content-overrides {
+  .content :not(pre) > code {
+    background: rgba(255, 255, 255, 0.06);
+    color: #d6dee8;
+  }
+  .content blockquote {
+    background: rgba(255, 255, 255, 0.04);
+    color: #a3a3a3;  // 对中性灰底保证 ≥4.5:1（WCAG AA）
+  }
 }
-
-html[data-mode="dark"] .content blockquote {
-  background: rgba(255, 255, 255, 0.04);
-  color: #a3a3a3;  // 对中性灰底保证 ≥4.5:1（WCAG AA）
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) { @include dark-content-overrides; }
 }
+html[data-mode="dark"] { @include dark-content-overrides; }
 
 .post-tag,
 a.post-tag,
