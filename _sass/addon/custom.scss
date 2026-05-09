@@ -157,14 +157,17 @@ html[data-mode="dark"] {
   }
 }
 
-// 深色模式下行内 code 改为中性字色，避免 H2/H3 badge/链接/code 都用同一抹饱和蓝造成"花"。
+// 深色模式下：行内 code 与 blockquote 改用中性灰底，
+// 把蓝色让给 H2 / H3 badge / 链接这三个"主动强调"，
+// 避免全屏蓝点叠加。
 html[data-mode="dark"] .content :not(pre) > code {
+  background: rgba(255, 255, 255, 0.06);
   color: #d6dee8;
 }
 
-// 深色模式 blockquote 文字也要保证对比度 ≥4.5:1（WCAG AA）。
 html[data-mode="dark"] .content blockquote {
-  color: #a3a3a3;
+  background: rgba(255, 255, 255, 0.04);
+  color: #a3a3a3;  // 对中性灰底保证 ≥4.5:1（WCAG AA）
 }
 
 .post-tag,
